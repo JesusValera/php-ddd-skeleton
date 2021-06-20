@@ -3,7 +3,7 @@ mooc_backend:
     FriendsOfBehat\SymfonyExtension:
       kernel:
         class: CodelyTv\Apps\Mooc\Backend\MoocBackendKernel
-      bootstrap: apps/mooc/bootstrap.php
+      bootstrap: apps/bootstrap.php
     Behat\MinkExtension:
       sessions:
         symfony:
@@ -21,6 +21,13 @@ mooc_backend:
     fine:
       paths:
         - tests/apps/mooc/backend/features/fine
+      contexts:
+        - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiResponseContext
+
+    course:
+      paths:
+        - tests/apps/mooc/backend/features/courses
       contexts:
         - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiRequestContext
         - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiResponseContext
