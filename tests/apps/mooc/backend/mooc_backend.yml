@@ -12,7 +12,15 @@ mooc_backend:
 
   suites:
     health_check:
-      paths: [ tests/apps/mooc/backend/features/health_check ]
+      paths:
+        - tests/apps/mooc/backend/features/health_check
+      contexts:
+        - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiResponseContext
+
+    fine:
+      paths:
+        - tests/apps/mooc/backend/features/fine
       contexts:
         - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiRequestContext
         - CodelyTv\Tests\Shared\Infrastructure\Behat\ApiResponseContext

@@ -1,0 +1,4 @@
+fine:
+    path: /fine/{name}
+    controller: CodelyTv\Apps\Mooc\Backend\Controller\Fine\FineGetController
+    methods:  [GET]

@@ -4,7 +4,7 @@
   "type": "project",
   "description": "DDD php Skeleton - Monorepository",
   "require": {
-    "php": ">7.2",
+    "php": "^7.4",
 
     "ext-apcu": "*",
     "ext-json": "*",
@@ -20,7 +20,7 @@
   "require-dev": {
     "ext-xdebug": "*",
 
-    "roave/security-advisories": "dev-master",
+    "roave/security-advisories": "dev-latest",
 
     "behat/behat": "^3.5",
     "behat/mink-extension": "^2.3",
