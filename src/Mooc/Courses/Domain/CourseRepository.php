@@ -8,5 +8,5 @@ interface CourseRepository
 {
     public function save(Course $course): void;
 
-    public function search(string $uuid): ?Course;
+    public function search(CourseUuid $uuid): ?Course;
 }

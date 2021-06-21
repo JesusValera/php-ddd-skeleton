@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace CodelyTv\Mooc\Courses\Application;
 
 use CodelyTv\Mooc\Courses\Domain\Course;
+use CodelyTv\Mooc\Courses\Domain\CourseDuration;
+use CodelyTv\Mooc\Courses\Domain\CourseName;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
+use CodelyTv\Mooc\Courses\Domain\CourseUuid;
 
 final class CourseCreator
 {
@@ -18,7 +21,11 @@ final class CourseCreator
 
     public function __invoke(CreateCourseRequest $request)
     {
-        $course = new Course($request->uuid(), $request->name(), $request->duration());
+        $uuid = new CourseUuid($request->uuid());
+        $name = new CourseName($request->name());
+        $duration = new CourseDuration($request->duration());
+
+        $course = new Course($uuid, $name, $duration);
 
         $this->repository->save($course);
     }
