@@ -1,6 +1,6 @@
 Feature: Create a new course
   In order to have courses on the platform
-  As a user with admmin permissions
+  As a user with admin permissions
   I want to create new course
 
   Scenario: A valid non existing course

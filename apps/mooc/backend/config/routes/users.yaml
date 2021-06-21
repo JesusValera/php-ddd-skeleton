@@ -1,0 +1,4 @@
+users_post:
+    path: /users
+    controller: CodelyTv\Apps\Mooc\Backend\Controller\Users\UsersPostController
+    methods:  [POST]
