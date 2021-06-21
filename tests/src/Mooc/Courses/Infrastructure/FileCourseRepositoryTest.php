@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Tests\Mooc\Courses\Infraestructure;
+namespace CodelyTv\Tests\Mooc\Courses\Infrastructure;
 
 use CodelyTv\Mooc\Courses\Domain\Course;
-use CodelyTv\Mooc\Courses\Infraestructure\FileCourseRepository;
+use CodelyTv\Mooc\Courses\Infrastructure\FileCourseRepository;
 use PHPUnit\Framework\TestCase;
 
 final class FileCourseRepositoryTest extends TestCase

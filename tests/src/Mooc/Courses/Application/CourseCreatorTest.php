@@ -7,7 +7,6 @@ namespace CodelyTv\Tests\Mooc\Courses\Application;
 use CodelyTv\Mooc\Courses\Application\CourseCreator;
 use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
-use CodelyTv\Mooc\Courses\Infraestructure\FileCourseRepository;
 use PHPUnit\Framework\TestCase;
 
 final class CourseCreatorTest extends TestCase
