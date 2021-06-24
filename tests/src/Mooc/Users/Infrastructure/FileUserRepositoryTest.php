@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace CodelyTv\Tests\Mooc\Users\Infrastructure;
 
-use CodelyTv\Mooc\Users\Domain\User;
-use CodelyTv\Mooc\Users\Domain\UserEmail;
-use CodelyTv\Mooc\Users\Domain\UserName;
 use CodelyTv\Mooc\Users\Infrastructure\FileUserRepository;
+use CodelyTv\Tests\Mooc\Users\Domain\UserEmailMother;
+use CodelyTv\Tests\Mooc\Users\Domain\UserMother;
 use PHPUnit\Framework\TestCase;
 
 final class FileUserRepositoryTest extends TestCase
@@ -16,10 +15,7 @@ final class FileUserRepositoryTest extends TestCase
     public function it_should_save_a_user(): void
     {
         $repository = new FileUserRepository();
-        $user = new User(
-            new UserName('name'),
-            new UserEmail('email@mail.com')
-        );
+        $user = UserMother::random();
 
         $repository->save($user);
     }
@@ -28,14 +24,11 @@ final class FileUserRepositoryTest extends TestCase
     public function it_should_return_an_existing_user(): void
     {
         $repository = new FileUserRepository();
-        $user = new User(
-            new UserName('name'),
-            new UserEmail('email@mail.com')
-        );
+        $user = UserMother::random();
 
         $repository->save($user);
 
-        $this->assertEquals($user, $repository->search(new UserEmail('email@mail.com')));
+        $this->assertEquals($user, $repository->search($user->email()));
     }
 
     /** @test */
@@ -43,6 +36,6 @@ final class FileUserRepositoryTest extends TestCase
     {
         $repository = new FileUserRepository();
 
-        $this->assertNull($repository->search(new UserEmail('non-existing-email@mail.com')));
+        $this->assertNull($repository->search(UserEmailMother::random()));
     }
 }

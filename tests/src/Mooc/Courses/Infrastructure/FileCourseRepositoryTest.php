@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace CodelyTv\Tests\Mooc\Courses\Infrastructure;
 
-use CodelyTv\Mooc\Courses\Domain\Course;
-use CodelyTv\Mooc\Courses\Domain\CourseDuration;
-use CodelyTv\Mooc\Courses\Domain\CourseName;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
 use CodelyTv\Mooc\Courses\Infrastructure\FileCourseRepository;
+use CodelyTv\Tests\Mooc\Courses\Domain\CourseMother;
+use CodelyTv\Tests\Mooc\Courses\Domain\CourseUuidMother;
 use PHPUnit\Framework\TestCase;
 
 final class FileCourseRepositoryTest extends TestCase
@@ -17,11 +15,7 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_course(): void
     {
         $repository = new FileCourseRepository();
-        $course = new Course(
-            new CourseUuid('55ECB36B-53CE-4138-9133-9382DB74FC3C'),
-            new CourseName('name'),
-            new CourseDuration('duration')
-        );
+        $course = CourseMother::random();
 
         $repository->save($course);
     }
@@ -30,15 +24,11 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_return_an_existing_course(): void
     {
         $repository = new FileCourseRepository();
-        $course = new Course(
-            new CourseUuid('55ECB36B-53CE-4138-9133-9382DB74FC3C'),
-            new CourseName('name'),
-            new CourseDuration('duration')
-        );
+        $course = CourseMother::random();
 
         $repository->save($course);
 
-        $this->assertEquals($course, $repository->search(new CourseUuid('55ECB36B-53CE-4138-9133-9382DB74FC3C')));
+        $this->assertEquals($course, $repository->search($course->uuid()));
     }
 
     /** @test */
@@ -46,6 +36,6 @@ final class FileCourseRepositoryTest extends TestCase
     {
         $repository = new FileCourseRepository();
 
-        $this->assertNull($repository->search(new CourseUuid('55ECB36B-53CE-4138-9133-9382DB74FC3D')));
+        $this->assertNull($repository->search(CourseUuidMother::random()));
     }
 }
