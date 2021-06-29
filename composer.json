@@ -16,7 +16,9 @@
     "symfony/yaml": "^4.3",
 
     "lambdish/phunctional": "^1.0",
-    "ramsey/uuid": "^4.1"
+    "ramsey/uuid": "^4.1",
+    "doctrine/orm": "^2.9",
+    "doctrine/dbal": "^2.13"
   },
   "require-dev": {
     "ext-xdebug": "*",
