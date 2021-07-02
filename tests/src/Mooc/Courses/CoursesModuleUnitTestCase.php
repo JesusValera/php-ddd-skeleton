@@ -14,7 +14,7 @@ abstract class CoursesModuleUnitTestCase extends TestCase
 
     protected function shouldSave(Course $course): void
     {
-        $this->repository->method('save')->with($course);
+        $this->repository()->method('save')->with($course);
     }
 
     protected function repository(): CourseRepository

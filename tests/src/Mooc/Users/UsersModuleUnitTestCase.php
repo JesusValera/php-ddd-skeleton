@@ -14,7 +14,7 @@ abstract class UsersModuleUnitTestCase extends TestCase
 
     protected function shouldSave(User $user): void
     {
-        $this->repository->method('save')->with($user);
+        $this->repository()->method('save')->with($user);
     }
 
     protected function repository()

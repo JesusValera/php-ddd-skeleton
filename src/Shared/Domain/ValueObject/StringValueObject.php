@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Mooc\Shared\Domain\ValueObject;
+namespace CodelyTv\Shared\Domain\ValueObject;
 
 abstract class StringValueObject
 {

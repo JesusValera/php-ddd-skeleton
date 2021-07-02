@@ -17,7 +17,7 @@ final class UserCreatorTest extends UsersModuleUnitTestCase
     {
         parent::setUp();
 
-        $this->creator = new UserCreator($this->repository);
+        $this->creator = new UserCreator($this->repository());
     }
 
     /** @test */

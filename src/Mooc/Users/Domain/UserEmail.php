@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace CodelyTv\Mooc\Users\Domain;
 
-use CodelyTv\Mooc\Shared\Domain\ValueObject\StringValueObject;
+use CodelyTv\Shared\Domain\ValueObject\StringValueObject;
 use InvalidArgumentException;
 
 final class UserEmail extends StringValueObject
