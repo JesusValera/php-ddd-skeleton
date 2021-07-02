@@ -9,8 +9,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 final class MinkSessionRequestHelper
 {
-    /** @var MinkHelper */
-    private $sessionHelper;
+    private MinkHelper $sessionHelper;
 
     public function __construct($sessionHelper)
     {

@@ -12,8 +12,8 @@ use RuntimeException;
 
 final class ApiResponseContext extends RawMinkContext
 {
-    private $sessionHelper;
-    private $minkSession;
+    private MinkHelper $sessionHelper;
+    private Session $minkSession;
 
     public function __construct(Session $minkSession)
     {

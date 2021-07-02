@@ -8,7 +8,7 @@ use CodelyTv\Tests\Mooc\Courses\CoursesModuleInfrastructureTestCase;
 use CodelyTv\Tests\Mooc\Courses\Domain\CourseMother;
 use CodelyTv\Tests\Mooc\Courses\Domain\CourseUuidMother;
 
-final class FileCourseRepositoryTest extends CoursesModuleInfrastructureTestCase
+final class CourseRepositoryTest extends CoursesModuleInfrastructureTestCase
 {
     /** @test */
     public function it_should_save_a_course(): void

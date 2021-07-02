@@ -12,7 +12,7 @@ use CodelyTv\Tests\Shared\Infrastructure\Mink\MinkSessionRequestHelper;
 
 final class ApiRequestContext extends RawMinkContext
 {
-    private $request;
+    private MinkSessionRequestHelper $request;
 
     public function __construct(Session $session)
     {

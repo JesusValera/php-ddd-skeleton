@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class MinkHelper
 {
-    private $session;
+    private Session $session;
 
     public function __construct(Session $session)
     {

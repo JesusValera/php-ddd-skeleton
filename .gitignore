@@ -3,7 +3,8 @@
 
 /apps/*/*/var/
 
-/vendor/
+/build
+/vendor
 
 *.repo
 *.cache
