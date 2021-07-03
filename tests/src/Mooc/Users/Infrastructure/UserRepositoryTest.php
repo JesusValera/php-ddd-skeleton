@@ -8,7 +8,7 @@ use CodelyTv\Tests\Mooc\Users\Domain\UserEmailMother;
 use CodelyTv\Tests\Mooc\Users\Domain\UserMother;
 use CodelyTv\Tests\Mooc\Users\UsersModuleInfrastructureTestCase;
 
-final class FileUserRepositoryTest extends UsersModuleInfrastructureTestCase
+final class UserRepositoryTest extends UsersModuleInfrastructureTestCase
 {
     /** @test */
     public function it_should_save_a_user(): void

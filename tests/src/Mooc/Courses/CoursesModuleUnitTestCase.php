@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class CoursesModuleUnitTestCase extends TestCase
 {
-    protected CourseRepository $repository;
+    private CourseRepository $repository;
 
     protected function shouldSave(Course $course): void
     {
@@ -19,6 +19,10 @@ abstract class CoursesModuleUnitTestCase extends TestCase
 
     protected function repository(): CourseRepository
     {
-        return $this->repository = $this->repository ?: $this->createMock(CourseRepository::class);
+        if (!isset($this->repository)) {
+            $this->repository = $this->createMock(CourseRepository::class);
+        }
+
+        return $this->repository;
     }
 }
