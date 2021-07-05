@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace CodelyTv\Shared\Infrastructure\Doctrine;
 
 use CodelyTv\Shared\Infrastructure\Doctrine\Dbal\DbalCustomTypesRegistrar;
-use CodelyTv\Shared\Infrastructure\Doctrine\Dbal\DoctrineCustomType;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Schema\MySqlSchemaManager;
 use Doctrine\ORM\Configuration;
@@ -27,13 +26,13 @@ final class DoctrineEntityManagerFactory
         array $contextPrefixes,
         bool $isDevMode,
         string $schemaFile,
-        DoctrineCustomType ...$customTypes
+        array $dbalCustomTypesClasses
     ): EntityManagerInterface {
         if ($isDevMode) {
             self::generateDatabaseIfNotExists($parameters, $schemaFile);
         }
 
-        DbalCustomTypesRegistrar::register(...$customTypes);
+        DbalCustomTypesRegistrar::register($dbalCustomTypesClasses);
 
         return EntityManager::create($parameters, self::createConfiguration($contextPrefixes, $isDevMode));
     }

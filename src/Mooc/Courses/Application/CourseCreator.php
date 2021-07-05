@@ -9,14 +9,17 @@ use CodelyTv\Mooc\Courses\Domain\CourseDuration;
 use CodelyTv\Mooc\Courses\Domain\CourseName;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
 use CodelyTv\Mooc\Courses\Domain\CourseUuid;
+use CodelyTv\Shared\Domain\Bus\DomainEventPublisher;
 
 final class CourseCreator
 {
     private CourseRepository $repository;
+    private DomainEventPublisher $publisher;
 
-    public function __construct(CourseRepository $repository)
+    public function __construct(CourseRepository $repository, DomainEventPublisher $publisher)
     {
         $this->repository = $repository;
+        $this->publisher = $publisher;
     }
 
     public function __invoke(CreateCourseRequest $request)
@@ -25,8 +28,9 @@ final class CourseCreator
         $name = new CourseName($request->name());
         $duration = new CourseDuration($request->duration());
 
-        $course = new Course($uuid, $name, $duration);
+        $course = Course::create($uuid, $name, $duration);
 
         $this->repository->save($course);
+        $this->publisher->publish(...$course->pullDomainEvents());
     }
 }
