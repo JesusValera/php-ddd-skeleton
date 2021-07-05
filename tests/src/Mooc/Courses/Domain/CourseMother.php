@@ -8,7 +8,7 @@ use CodelyTv\Mooc\Courses\Application\CreateCourseRequest;
 use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseDuration;
 use CodelyTv\Mooc\Courses\Domain\CourseName;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
+use CodelyTv\Mooc\Shared\Domain\Course\CourseUuid;
 
 final class CourseMother
 {

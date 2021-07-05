@@ -6,7 +6,7 @@ namespace CodelyTv\Mooc\Courses\Infrastructure\Persistence;
 
 use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
+use CodelyTv\Mooc\Shared\Domain\Course\CourseUuid;
 
 final class FileCourseRepository implements CourseRepository
 {

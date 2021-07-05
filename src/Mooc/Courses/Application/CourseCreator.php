@@ -8,7 +8,7 @@ use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseDuration;
 use CodelyTv\Mooc\Courses\Domain\CourseName;
 use CodelyTv\Mooc\Courses\Domain\CourseRepository;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
+use CodelyTv\Mooc\Shared\Domain\Course\CourseUuid;
 use CodelyTv\Shared\Domain\Bus\DomainEventPublisher;
 
 final class CourseCreator

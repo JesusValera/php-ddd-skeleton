@@ -19,8 +19,14 @@ services:
     resource: '../src/Command'
     tags: ['console.command']
 
+  # Wire
   CodelyTv\:
     resource: '../../../../src'
+
+  # -- TAGGING --
+#  CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus:
+#    arguments: [!tagged codely.domain_event_subscriber]
+#    lazy: true
 
   CodelyTv\Shared\Infrastructure\Bus\Event\SymfonySyncEventBus:
     arguments: [!tagged codely.domain_event_subscriber]

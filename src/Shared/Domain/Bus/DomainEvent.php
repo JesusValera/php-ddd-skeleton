@@ -23,7 +23,14 @@ abstract class DomainEvent
 
     abstract public static function eventName(): string;
 
-    abstract public function plainBody(): array;
+    abstract public function toPrimitives(): array;
+
+    abstract public static function fromPrimitives(
+        string $aggregateId,
+        array $body,
+        string $eventId,
+        string $occurredOn
+    ): self;
 
     public function aggregateId(): string
     {

@@ -7,10 +7,10 @@ namespace CodelyTv\Tests\Mooc\Courses\Application\Create;
 use CodelyTv\Mooc\Courses\Application\CreateCourseRequest;
 use CodelyTv\Mooc\Courses\Domain\CourseDuration;
 use CodelyTv\Mooc\Courses\Domain\CourseName;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
+use CodelyTv\Mooc\Shared\Domain\Course\CourseUuid;
 use CodelyTv\Tests\Mooc\Courses\Domain\CourseDurationMother;
-use CodelyTv\Tests\Mooc\Courses\Domain\CourseNameMother;
 use CodelyTv\Tests\Mooc\Courses\Domain\CourseUuidMother;
+use CodelyTv\Tests\Mooc\Courses\Domain\CourseNameMother;
 
 final class CreateCourseRequestMother
 {

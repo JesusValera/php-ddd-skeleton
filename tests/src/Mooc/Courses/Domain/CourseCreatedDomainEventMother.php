@@ -2,16 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Tests\Mooc\Courses\Application\Domain;
+namespace CodelyTv\Tests\Mooc\Courses\Domain;
 
 use CodelyTv\Mooc\Courses\Domain\Course;
 use CodelyTv\Mooc\Courses\Domain\CourseCreatedDomainEvent;
 use CodelyTv\Mooc\Courses\Domain\CourseDuration;
-use CodelyTv\Mooc\Courses\Domain\CourseUuid;
 use CodelyTv\Mooc\Courses\Domain\CourseName;
-use CodelyTv\Tests\Mooc\Courses\Domain\CourseDurationMother;
-use CodelyTv\Tests\Mooc\Courses\Domain\CourseNameMother;
-use CodelyTv\Tests\Mooc\Courses\Domain\CourseUuidMother;
+use CodelyTv\Mooc\Shared\Domain\Course\CourseUuid;
 
 final class CourseCreatedDomainEventMother
 {
